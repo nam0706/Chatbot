@@ -278,15 +278,6 @@ with st.sidebar:
         st.session_state.hien_thi = []
         st.rerun()
 
-    st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown(
-        "<div style='color:#475569;font-size:0.78rem;text-align:center;'>"
-        "Powered by Google Gemini 1.5 Flash<br>"
-        "Made with ❤️ for IT Students"
-        "</div>",
-        unsafe_allow_html=True
-    )
-
 
 # ─── Header ──────────────────────────────────────────────────────────────────
 col1, col2 = st.columns([1, 4])
