@@ -1,0 +1,332 @@
+Câu 1: Cho đoạn chương trình sau:
+#include <iostream>
+using namespace std;
+int main()
+{ 
+    int n=100;
+    int *ptr=&n;
+    *ptr = 200;
+    return 0;
+}
+a) Giá trị của biến n là:...
+
+Câu 2: Cho đoạn chương trình sau:
+#include <iostream>
+using namespace std;
+int main()
+{
+    int *a = new int[4];
+    cout<<a++;
+    return 0;
+}
+Giả sử khi chương trình thực thi, biến a 
+được cấp phát bộ nhớ có địa chỉ là 0x60. 
+Chương trình thực hiện đến lệnh return 0; 
+thì giá trị được xuất ra màn hình là:
+
+Câu 3: Cho đoạn chương trình:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[4]={1,2,3,4};
+    int x, *p = a;
+    ...;
+    return 0;
+}
+Lệnh nào dưới đây chèn vào ... là không hợp lệ:
+x = p[2];
+x = *(a+2);
+cout<<a++;
+*p = 5;
+
+Câu 4: Cho biết kết quả in ra màn hình của đoạn chương trình sau:
+#include<iostream>
+using namespace std;
+void Swap(int &n,int a)
+{ 
+    int tam;
+    tam = n;
+    n = a;
+    a = tam;
+}
+int main()
+{ 
+    int n=5;
+    int *a= new int(1);
+    Swap(n,*a);
+    cout<<n<<" "<<*a;
+    return 0;
+}
+Đáp án:
+1 1.
+1 5
+5 1
+5 5
+
+Câu5: Cho biết kết quả in ra màn hình của đoạn chương trình sau:
+void Swap(int n,int a[])
+{ 
+    int tam;
+    tam = n;
+    n = a[0];
+    a[0] = tam;
+}
+int main()
+{ 
+    int n=5;
+    int a[2]= {1,2};
+    Swap(n,a);
+    cout<<n<<" "<<a[0];
+    return 0;
+}
+Đáp án:
+1 1
+1 5
+5 1
+5 5.
+
+Câu 6: Cho biết kết quả in ra màn hình của chương trình:
+#include<iostream>
+#include<cstring>
+using namespace std;
+void Create(int *a)
+{ 
+    a = new int[5];
+}
+int main()
+{ 
+    int *a = NULL;
+    Create(a);
+    cout<<a;
+    return 0;
+}
+Đáp án:
+Một địa chỉ nào đó
+0
+
+Câu 7: Cho đoạn chương trình sau, 
+cho biết chương trình sai từ dòng thứ mấy:
+1  #include<iostream>
+2  using namespace std;
+3  int main()
+4  { 
+5      int **a;  //khai bao mot mang hai chieu bang con tro
+6      a = new int[5];
+7      for(int i = 0;i<5;i++)
+8          a[i] = new int[5];
+9      for(int i = 0;i<5;i++)
+10         for(int j = 0;i<5;j++)
+11             a[i][j] = i+j;
+12     return 0;
+13 }
+Đáp án:
+5
+6.
+8
+11
+
+Câu 8: Cho đoạn chương trình sau, 
+cho biết chương trình sai ở dòng thứ mấy:
+1  #include<iostream>
+2  using namespace std;
+3  int main()
+4  { 
+5      int n;
+6      cin>>n;
+7      int a[n];
+8      for(int i = 0;i<5;i++)
+9          a[i] = i+1;
+10     return 0;
+11 }
+Đáp án:
+5
+6
+7.
+9
+
+Câu 9: Cho biết kết quả in ra màn hình của chương trình:
+
+input: hom nay toi buon.
+
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{ 
+    char a[100],b[100];
+    cin>>a;
+    cin>>b;
+    cout<<a<<" - "<<b;
+    return 0;
+}
+Đáp án:
+hom nay - toi buon
+hom nay toi buon - (ở đây không có gì hết ^.^)
+hom - nay.
+hom - (ở đây không có gì hết ^.^)
+
+Câu 10: Cho biết kết quả in ra màn hình của chương trình:
+
+input: 19
+       Pham Nguyen Minh Thang
+
+#include<iostream>
+#include<cstring>
+using namespace std;
+struct SinhVien
+{
+    int Tuoi;
+    char Ten[100];
+};
+
+int main()
+{ 
+    SinhVien a;
+    cin>>a.Tuoi;
+    cin.getline(a.Ten,100,'\n');
+    cout<<a.Tuoi<<" - "<<a.Ten;
+    return 0;
+}
+Đáp án:
+19 - Pham Nguyen Minh Thang
+19 - (không có gì ở đây cả).
+19 - Pham
+19 - P 
+
+Câu 11: Cho biết kết quả in ra màn hình của chương trình:
+
+input: 19
+       Pham Nguyen Minh Thang
+
+#include<iostream>
+#include<cstring>
+using namespace std;
+struct SinhVien
+{
+    int Tuoi;
+    char Ten[100];
+};
+
+int main()
+{ 
+    SinhVien a;
+    cin>>a.Tuoi;
+    cin.ignore();
+    cin.getline(a.Ten,100,'\n');
+    cout<<a.Tuoi<<" - "<<a.Ten;
+    return 0;
+}
+Đáp án:
+19 - Pham Nguyen Minh Thang.
+19 - (không có gì ở đây cả)
+19 - Pham
+19 - P 
+
+Câu 12: Cho biết kết quả in ra màn hình của chương trình:
+
+input: Pham Nguyen
+       Minh Thang
+#include<iostream>
+#include<cstring>
+using namespace std;
+struct SinhVien
+{
+    int Tuoi;
+    char Ten[100];
+};
+
+int main()
+{ 
+    SinhVien a;
+    cin.getline(a.Ten,100,'\n');
+    cin.ignore();
+    cin.getline(a.Ten,100,'\n');
+    cout<<19<<" - "<<a.Ten;
+    return 0;
+}
+Đáp án:
+19 - inh Thang.
+19 - Minh Thang
+19 - Pham Nguyen
+19 - Pham Nguyen Minh Thang
+
+Câu 13: Cho biết kết quả in ra màn hình của chương trình:
+
+input: Sinh Vien
+#include<iostream>
+#include<cstring>
+using namespace std;
+struct SinhVien
+{
+    int Tuoi;
+    char Ten[100];
+};
+
+int main()
+{ 
+    SinhVien a;
+    cin.getline(a.Ten,100,' ');
+    cout<<19<<" - "<<a.Ten;
+    return 0;
+}
+Đáp án:
+19 - Sinh Vien
+19 - (không có gì cả)
+19 - Sinh.
+19 - S
+
+Câu 14: Cho biết kết quả in ra màn hình của chương trình:
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{ 
+    char a[] ="sinhvien" ;
+    cout<<sizeof(a);
+    return 0;
+}
+Đáp án:
+8
+9.
+10
+11
+
+Câu 15: cho biết kết quả in ra màn hình của chương trình:
+#include<iostream>
+#include<cstring>
+using namespace std;
+struct Vidu1
+{
+    char a;
+    char b;
+    char c;
+};
+
+struct Vidu2
+{
+    char a;
+    char b;
+    int c;
+};
+
+struct Vidu3
+{
+    int a;
+    long long b;
+    int c;
+};
+
+int main()
+{ 
+    Vidu1 a;
+    Vidu2 b;
+    Vidu3 c;
+    cout<<sizeof(a)<<" "<<sizeof(b)<<" "<<sizeof(c);
+    return 0;
+}
+Đáp án:
+3 8 16
+3 6 16
+3 8 24.
+8 16 24

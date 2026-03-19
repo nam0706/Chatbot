@@ -1,6 +1,10 @@
 # Bảo mật - Không bao giờ đẩy lên GitHub
 .env
 .streamlit/secrets.toml
+google_credentials.json
+
+# Database người dùng (chứa dữ liệu cá nhân)
+data/chatbot.db
 
 # Python
 __pycache__/
